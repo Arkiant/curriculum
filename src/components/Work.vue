@@ -15,7 +15,6 @@ const moment = require('moment');
 
 function formatDateTime(date) {
     let result = moment(date, ["DD-MM-YYYY"], "es").format("MMMM-YYYY");
-    console.log(result);
     return result;    
 }
 
