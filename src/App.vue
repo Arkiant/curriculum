@@ -1,20 +1,46 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Currículum</router-link> |
-      <router-link to="/projects">Projects</router-link>
+    <div class="container">
+      <app-side-nav></app-side-nav>
+      <content>
+        <div id="nav">
+          <router-link to="/">Currículum</router-link> |
+          <router-link to="/projects">Projects</router-link>
+        </div>
+        <router-view/>
+      </content>
     </div>
-    <router-view/>
   </div>
 </template>
 
+<script>
+export default {
+  components: {
+    appSideNav: () => import('@/views/SideNav.vue')
+  }
+}
+</script>
+
+
 <style lang="scss">
+html {
+  body {
+    padding: 0px;
+    margin: 0px;
+  }
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  .container {
+    display: flex;
+    content {
+      width: 80%;
+    }
+  }
 }
 #nav {
   padding: 30px;
