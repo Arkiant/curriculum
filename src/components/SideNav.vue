@@ -1,12 +1,12 @@
 <template>
-    <div class="sidenav">
+    <aside>
         <div class="foto">
             <img src="../assets/foto.jpg" />
         </div>
         <p class="name">Samuel Porras</p>
         <p class="profession"><i>Full Stack Developer</i></p>
         <p class="age">{{ age }}</p>
-    </div>
+    </aside>
 </template>
 
 <script>
@@ -26,10 +26,13 @@ export default {
 
 
 <style lang="scss" scoped>
-    div.sidenav {
+    $color: rgb(214, 212, 212);
+    $color-light: lighten($color, 50%);
+    $color-dark: darken($color, 70%);
+
+    aside {
         width: 20%;
-        background-color: #333;
-        height: 100vh;
+        background-color: $color-dark;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -38,12 +41,12 @@ export default {
             margin-top: 5%;
             img {
                 border-radius: 50%;
-                border: 2px solid white;
+                border: 2px solid $color-light;
             }
         }
 
         p {
-            color: white;
+            color: $color-light;
             font-size: 1.5em;
             margin: 0;
             
@@ -51,19 +54,20 @@ export default {
                 text-align: center;
                 padding: 2%;
                 width: 75%;
-                border: 1px solid rgb(151, 150, 150);;
+                border: 1px solid $color;
                 margin-top: 10%;
             }
 
             &.profession {
                 margin-top: 5%;
                 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                color: rgb(151, 150, 150);
+                color: $color;
+                border-bottom: 1px solid $color;
             }
 
             &.age {
                 margin-top: 5%;
-                color: rgb(151, 150, 150);
+                color: $color;
             }
         }
     }
