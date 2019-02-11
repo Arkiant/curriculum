@@ -1,12 +1,13 @@
 <template>
-    <div>
+    <article>
         <h3>{{ category }}</h3>
-        <i>{{ business }}</i>
+        <i class="business">{{ business }}</i>
         <div>
-            <span>{{ initialDateFormatted }}</span> - <span>{{ finalDateFormatted }}</span> · <i> {{ timeLapseFormatted }} </i>
+            <span>{{ initialDateFormatted }}</span> - <span>{{ finalDateFormatted }}</span> <i> ( {{ timeLapseFormatted }} )</i>
         </div>
-        <div v-html="functions"></div>
-    </div>
+        <div v-html="functions" class="text"></div>
+        <hr>
+    </article>
 </template>
 
 
@@ -14,8 +15,7 @@
 const moment = require('moment');
 
 function formatDateTime(date) {
-    let result = moment(date, ["DD-MM-YYYY"], "es").format("MMMM-YYYY");
-    return result;    
+    return moment(date, ["DD-MM-YYYY"], "es").format("MMMM-YYYY");
 }
 
 function timeLapse(datefrom, dateto) {
@@ -50,5 +50,24 @@ export default {
 </script>
 
 <style lang="scss">
+    article {
+        padding: 1%;
+        
+        h3 {
+            color: #333;
+        }
 
+        i.business {
+            color: #555;
+        }
+
+        div.text {
+
+        }
+
+        hr {
+            width: 10%;
+            border: 2px double #333;
+        }
+    }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="container">
+    <main>
       <app-side-nav></app-side-nav>
       <content>
         <div id="nav">
@@ -9,14 +9,14 @@
         </div>
         <router-view/>
       </content>
-    </div>
+    </main>
   </div>
 </template>
 
 <script>
 export default {
   components: {
-    appSideNav: () => import('@/views/SideNav.vue')
+    appSideNav: () => import('@/components/SideNav.vue')
   }
 }
 </script>
@@ -27,29 +27,31 @@ html {
   body {
     padding: 0px;
     margin: 0px;
-  }
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  .container {
-    display: flex;
-    content {
-      width: 80%;
+    #app {
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+      main {
+        display: flex;
+        content {
+          width: 80%;
+          height: 100vh;          
+        }
+      }
+    }
+    #nav {
+      padding: 30px;
+      a {
+        font-weight: bold;
+        color: #2c3e50;
+        &.router-link-exact-active {
+          color: #42b983;
+        }
+      }
     }
   }
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+
 </style>
