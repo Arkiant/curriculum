@@ -1,11 +1,11 @@
 <template>
     <article>
-        <h3>{{ category }}</h3>
-        <i class="business">{{ business }}</i>
+        <h3>{{ work.category }}</h3>
+        <i class="business">{{ work.business }}</i>
         <div>
             <span>{{ initialDateFormatted }}</span> - <span>{{ finalDateFormatted }}</span> <i> ( {{ timeLapseFormatted }} )</i>
         </div>
-        <div v-html="functions" class="text"></div>
+        <div v-html="work.functions" class="text"></div>
         <hr>
     </article>
 </template>
@@ -28,18 +28,12 @@ function timeLapse(datefrom, dateto) {
 // @ is an alias to /src
 
 export default {
-    props: [
-        "business",
-        "initialDate",
-        "finalDate",
-        "category", 
-        "functions"
-        ],
-        computed: {
-            initialDateFormatted: function() { return formatDateTime(this.initialDate) },
-            finalDateFormatted: function() { return formatDateTime(this.finalDate) },
-            timeLapseFormatted: function() { return timeLapse(this.initialDate, this.finalDate) },
-        }
+    props: ["work"],
+    computed: {
+        initialDateFormatted: function() { return formatDateTime(this.work.initialDate) },
+        finalDateFormatted: function() { return formatDateTime(this.work.finalDate) },
+        timeLapseFormatted: function() { return timeLapse(this.work.initialDate, this.work.finalDate) },
+    }
 }
 </script>
 

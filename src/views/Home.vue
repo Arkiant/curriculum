@@ -4,50 +4,21 @@
     <app-work 
     v-for="(work ,key) in works" 
     :key="key" 
-    :business="work.business"
-    :initialDate="work.initial_date"
-    :finalDate="work.final_date"
-    :category="work.category"
-    :functions="work.functions"></app-work>
+    :work="work"></app-work>
   </div>
 </template>
 
 <script>
-const axios = require('axios');
-const moment = require('moment');
 // @ is an alias to /src
 
-function sortByDate(a, b) {
-  let a_final_date = moment(a.final_date, ["DD-MM-YYY"]);
-  let b_final_date = moment(b.final_date, ["DD-MM-YYY"]);
-
-  if(a_final_date.isAfter(b_final_date)) {
-    return -1;
-  } 
-  
-  if ( a_final_date.isBefore(b_final_date)) {
-    return 1;
-  }
-
-  return 0;
-}
-
-function convertObjectToArray(object) {
-  return Object.entries(object).map(e => Object.assign(e[1], {key: e[0]}));
-}
-
 export default {
-  data: function() {
-    return {
-      works: []
+  computed: {
+    works: function() {
+      return this.$store.getters.works;
     }
   },
-  mounted() {
-    axios.get('https://curriculum-6563e.firebaseio.com/experience.json').then( response => {
-      this.works = convertObjectToArray(response.data).sort(sortByDate);
-    }).catch( error => {
-      console.log(error);
-    })
+  created() {
+    this.$store.dispatch('initWorks');
   },
   components: {
     appWork: () => import('@/components/Work.vue')
