@@ -16,10 +16,7 @@ const moment = require('moment');
 
 export default {   
     computed: {
-        age: () => {
-            let result = moment("21-05-1985", ["DD-MM-YYYY"], "es").toNow(true);
-            return result;
-        }
+        age: () => moment("21-05-1985", ["DD-MM-YYYY"], "es").toNow(true),
     }
 }
 </script>

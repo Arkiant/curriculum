@@ -36,15 +36,9 @@ export default {
         "functions"
         ],
         computed: {
-            initialDateFormatted: function() {
-                return formatDateTime(this.initialDate);
-            },
-            finalDateFormatted: function() {
-                return formatDateTime(this.finalDate)
-            },
-            timeLapseFormatted: function() {
-                return timeLapse(this.initialDate, this.finalDate);
-            }
+            initialDateFormatted: function() { return formatDateTime(this.initialDate) },
+            finalDateFormatted: function() { return formatDateTime(this.finalDate) },
+            timeLapseFormatted: function() { return timeLapse(this.initialDate, this.finalDate) },
         }
 }
 </script>
@@ -59,10 +53,6 @@ export default {
 
         i.business {
             color: #555;
-        }
-
-        div.text {
-
         }
 
         hr {
