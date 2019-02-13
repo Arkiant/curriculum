@@ -12,27 +12,14 @@
 
 
 <script>
-const moment = require('moment');
-
-function formatDateTime(date) {
-    return moment(date, ["DD-MM-YYYY"], "es").format("MMMM-YYYY");
-}
-
-function timeLapse(datefrom, dateto) {
-    let dateFrom = moment(datefrom, ["DD-MM-YYYY"], "es");
-    let dateTo = moment(dateto, ["DD-MM-YYYY"], "es");
-    
-    return dateTo.from(dateFrom, true)
-}
-
-// @ is an alias to /src
+import { formatDateTime, timeLapse } from "@/libs/time.js";
 
 export default {
     props: ["work"],
     computed: {
-        initialDateFormatted: function() { return formatDateTime(this.work.initialDate) },
-        finalDateFormatted: function() { return formatDateTime(this.work.finalDate) },
-        timeLapseFormatted: function() { return timeLapse(this.work.initialDate, this.work.finalDate) },
+        initialDateFormatted: function() { return formatDateTime(this.work.initial_date, "es") },
+        finalDateFormatted: function() { return formatDateTime(this.work.final_date, "es") },
+        timeLapseFormatted: function() { return timeLapse(this.work.initial_date, this.work.final_date, "es") },
     }
 }
 </script>

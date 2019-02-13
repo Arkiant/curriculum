@@ -1,7 +1,7 @@
 <template>
     <aside>
         <div class="foto">
-            <img src="../assets/foto.jpg" />
+            <img src="@/assets/foto.jpg" />
         </div>
         <p class="name">Samuel Porras</p>
         <p class="profession"><i>Full Stack Developer</i></p>
@@ -10,13 +10,12 @@
 </template>
 
 <script>
-
-const moment = require('moment');
+import { calculateAge } from "@/libs/time.js";
 
 
 export default {   
     computed: {
-        age: () => moment("21-05-1985", ["DD-MM-YYYY"], "es").toNow(true),
+        age: () => calculateAge("21-05-1985","es"),
     }
 }
 </script>
