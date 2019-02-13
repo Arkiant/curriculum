@@ -1,6 +1,9 @@
 
 /**
  *  Sort the elements chronologically first the date closest to the current one.
+ *  @param {Object} a
+ *  @param {Object} b
+ *  @returns {int}
  */
 function sortByDate(a, b) {
     let a_final_date = moment(a.final_date, ["DD-MM-YYY"]);
@@ -18,7 +21,9 @@ function sortByDate(a, b) {
   }
 
 /**
- * Format a given datetime from 21-05-1985 to May-1985
+ * Format a given date
+ * @param {string} date Date in format 21-05-1985
+ * @returns {string} Mayo-1985
  */
 function formatDateTime(date) {
     return moment(date, ["DD-MM-YYYY"], "es").format("MMMM-YYYY");
@@ -26,6 +31,9 @@ function formatDateTime(date) {
 
 /**
  * Calculate time between 2 dates.
+ * @param {string} datefrom Date in format 21-05-1984
+ * @param {string} dateto Date in format 21-05-1985
+ * @returns {string} a year
  */
 function timeLapse(datefrom, dateto) {
     let dateFrom = moment(datefrom, ["DD-MM-YYYY"], "es");
