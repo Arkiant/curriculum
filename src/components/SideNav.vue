@@ -13,9 +13,17 @@
 import { calculateAge } from "@/libs/time.js";
 
 
-export default {   
+export default {
     computed: {
-        age: () => calculateAge("21-05-1985","es"),
+        profile: function() { 
+            return this.$store.getters.profile; 
+        },
+        age: function(){
+            return calculateAge(this.$store.getters.profile.birthday,"es");
+        },
+    },
+    created() {
+        this.$store.dispatch('initProfile');
     }
 }
 </script>
