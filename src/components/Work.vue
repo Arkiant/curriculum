@@ -2,11 +2,10 @@
     <article>
         <h3>{{ work.category }}</h3>
         <i class="business">{{ work.business }}</i>
-        <div>
+        <div class="date">
             <span>{{ initialDateFormatted }}</span> - <span>{{ finalDateFormatted }}</span> <i> ( {{ timeLapseFormatted }} )</i>
         </div>
         <div v-html="work.functions" class="text"></div>
-        <hr>
     </article>
 </template>
 
@@ -25,20 +24,31 @@ export default {
 </script>
 
 <style lang="scss">
+
+    @import '../scss/mixins';
+
     article {
-        padding: 1%;
+        width: 70%;
+        margin-bottom: 1%;
+        padding: 2%;
         
         h3 {
-            color: #333;
+            margin-top: 0px;
+            color: #03cfb0;
+            @include text-border-shadow(black);
         }
 
         i.business {
-            color: #555;
+            color: white;
+            font-weight: bold;
         }
 
-        hr {
-            width: 10%;
-            border: 2px double #333;
+        div.date {
+            color: white;
+        }
+
+        div.text {
+            color: white;
         }
     }
 </style>

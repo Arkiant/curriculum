@@ -5,6 +5,8 @@
     v-for="(work ,key) in works" 
     :key="key" 
     :work="work"></app-work>
+
+    <h2>Conocimientos técnicos</h2>
   </div>
 </template>
 
@@ -26,10 +28,18 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  h2 {
-    color: #333;
-    text-decoration: underline;
+<style lang="scss">
+
+  @import '../scss/mixins';
+
+  div.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      color: white;
+      @include title-format()
+    }
   }
 </style>
 

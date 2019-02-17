@@ -27,7 +27,7 @@ function sortByDate(a, b) {
  * @returns {string} Mayo-1985
  */
 function formatDateTime(date, lang) {
-    return moment(date, ["DD-MM-YYYY"], lang).format("MMMM-YYYY");
+    return moment(date, ["DD-MM-YYYY"], lang).format("MMMM YYYY");
 }
 
 /**

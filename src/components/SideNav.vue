@@ -1,5 +1,6 @@
 <template>
     <aside>
+        <h2 class="about">About me</h2>
         <div class="foto">
             <img src="@/assets/foto.jpg" />
         </div>
@@ -29,23 +30,34 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
-    $color: rgb(214, 212, 212);
-    $color-light: lighten($color, 50%);
-    $color-dark: darken($color, 70%);
+<style lang="scss">
+
+    @import '../scss/mixins';
+
+    $color: #03CFB0;
+    $color-light: white;
+    $color-dark: #1A1A21;
 
     aside {
         width: 20%;
-        background-color: $color-dark;
+        min-width: 350px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 100vh;
 
         div.foto {
             margin-top: 5%;
             img {
                 border-radius: 50%;
-                border: 2px solid $color-light;
+                border: 10px double black;
+                @include block-shadow(black);
+            }
+        }
+
+        h2 {
+            &.about {
+                @include title-format();
             }
         }
 
@@ -53,25 +65,23 @@ export default {
             color: $color-light;
             font-size: 1.5em;
             margin: 0;
-            
+            @include text-border-shadow(black);
+
             &.name {
+                font-size: 2em;
                 text-align: center;
-                padding: 2%;
                 width: 75%;
-                border: 1px solid $color;
                 margin-top: 10%;
             }
 
             &.profession {
-                margin-top: 5%;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                color: $color;
-                border-bottom: 1px solid $color;
+                font-size: 1em;
             }
 
             &.age {
-                margin-top: 5%;
-                color: $color;
+                font-size: 1em;
+                margin-top: 2%;
+                color: $color-light;
             }
         }
     }
