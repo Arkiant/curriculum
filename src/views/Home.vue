@@ -12,18 +12,27 @@
 
 <script>
 // @ is an alias to /src
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   computed: {
     works: function() {
-      return this.$store.getters.works;
+      return this.getWorks();
     }
   },
   created() {
-    this.$store.dispatch('initWorks');
+    this.initWorks();
   },
   components: {
     appWork: () => import('@/components/Work.vue')
+  },
+  methods: {
+    ...mapActions([
+      'initWorks'
+    ]),
+    ...mapGetters([
+      'getWorks'
+    ])
   }
 }
 </script>

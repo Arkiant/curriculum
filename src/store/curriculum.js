@@ -34,10 +34,10 @@ const actions = {
 }
 
 const getters = {
-    works: state => {
+    getWorks: state => {
         return state.works;
     },
-    profile: state => {
+    getProfile: state => {
         return state.profile;
     }
 }

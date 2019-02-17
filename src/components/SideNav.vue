@@ -12,19 +12,28 @@
 
 <script>
 import { calculateAge } from "@/libs/time.js";
+import { mapActions, mapGetters } from 'vuex';
 
 
 export default {
     computed: {
         profile: function() { 
-            return this.$store.getters.profile; 
+            return this.getProfile(); 
         },
         age: function(){
-            return calculateAge(this.$store.getters.profile.birthday,"es");
+            return calculateAge(this.profile.birthday,"es");
         },
     },
     created() {
-        this.$store.dispatch('initProfile');
+        this.initProfile();
+    },
+    methods: {
+        ...mapActions([
+            'initProfile'
+        ]),
+        ...mapGetters([
+            'getProfile'
+        ])
     }
 }
 </script>
