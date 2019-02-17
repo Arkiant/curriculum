@@ -46,6 +46,7 @@ html {
         width: 80%;
         overflow-y: scroll;
         max-height: 100%;
+        height: 100vh;
       }
       
     }

@@ -54,6 +54,7 @@ export default {
         flex-direction: column;
         align-items: center;
         height: 100vh;
+        max-height: 100%;
 
         div.foto {
             margin-top: 5%;
