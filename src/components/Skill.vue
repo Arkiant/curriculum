@@ -24,7 +24,6 @@ export default {
     },
     methods: {
         calculatePercentage(score) {
-            console.log(score)
             return score / this.maxValue * 100;
         }
     }
