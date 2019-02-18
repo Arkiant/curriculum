@@ -2,12 +2,6 @@
   <main id="app">
     <app-side-nav></app-side-nav>
     <content>
-      <!--
-      <div id="nav">
-        <router-link to="/">Currículum</router-link> |
-        <router-link to="/projects">Projects</router-link>
-      </div>
-      -->
       <router-view/>
     </content>
   </main>
@@ -45,20 +39,11 @@ html {
         margin-left: 20%;
         width: 80%;
         overflow-y: scroll;
+        scroll-behavior: smooth;
         max-height: 100%;
-        height: 100vh;
+        height: 100%;
       }
       
-    }
-    #nav {
-      padding: 30px;
-      a {
-        font-weight: bold;
-        color: #2c3e50;
-        &.router-link-exact-active {
-          color: #42b983;
-        }
-      }
     }
   }
 }

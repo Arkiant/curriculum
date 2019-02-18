@@ -7,6 +7,11 @@
         <p class="name">Samuel Porras</p>
         <p class="profession"><i>Full Stack Developer</i></p>
         <p class="age">{{ age }}</p>
+
+        <nav>
+            <router-link to="#experience" @click.native="scrollFix('#experience')">Experiencia</router-link>
+            <router-link to="#skills" @click.native="scrollFix('#skills')">Conocimientos técnicos</router-link>
+        </nav>
     </aside>
 </template>
 
@@ -33,7 +38,10 @@ export default {
         ]),
         ...mapGetters([
             'getProfile'
-        ])
+        ]),
+        scrollFix: function(hashbang) { /* Fix scroll functionality */
+            location.href = hashbang;
+        }
     }
 }
 </script>
@@ -55,6 +63,7 @@ export default {
         align-items: center;
         height: 100vh;
         max-height: 100%;
+        background-color: #13131d;
 
         div.foto {
             margin-top: 5%;
@@ -92,6 +101,25 @@ export default {
                 font-size: 1em;
                 margin-top: 2%;
                 color: $color-light;
+            }
+        }
+
+        nav {
+            margin-top: 5%;
+
+            a {
+                display: block;
+                margin-top: 10%;
+                text-decoration: none;
+                color: white;
+                border: 1px solid white;
+                border-radius: 25px;
+                padding: 10%;
+                width: 100%;
+
+                &.router-link-active {
+                    background-color: #03cfb0;
+                }
             }
         }
     }
