@@ -1,16 +1,21 @@
 <template>
   <div class="home">
     <h2 id="experience">Experiencia</h2>
-    <app-work 
-    v-for="(work, key) in works" 
-    :key="key + '-work'" 
-    :work="work"></app-work>
+    <div class="work-content">
+      <app-work 
+      v-for="(work, key) in works" 
+      :key="key + '-work'" 
+      :work="work"></app-work>
+    </div>
 
     <h2 id="skills">Conocimientos técnicos</h2>
-    <app-skill 
-    v-for="(skill, key) in skills"
-    :key="key+ '-skill'"
-    :skill="skill"></app-skill>
+
+    <div class="work-content">
+      <app-skill 
+      v-for="(skill, key) in skills"
+      :key="key+ '-skill'"
+      :skill="skill"></app-skill>
+     </div>
   </div>
 </template>
 
@@ -85,15 +90,16 @@ export default {
 <style lang="scss">
 
   @import '../scss/mixins';
+  
+  h2 {
+    @include title-format();
+  }
 
-  div.home {
+  div.work-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    h2 {
-      color: white;
-      @include title-format();
-    }
+    
   }
 </style>
 

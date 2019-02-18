@@ -1,7 +1,7 @@
 <template>
     <article>
-        <h3>{{ work.category }}</h3>
-        <i class="business">{{ work.business }}</i>
+        <h3>{{ work.category }} (<i class="business">{{ work.business }}</i>)</h3>
+        
         <div class="date">
             <span>{{ initialDateFormatted }}</span> - <span>{{ finalDateFormatted }}</span> <i> ( {{ timeLapseFormatted }} )</i>
         </div>
@@ -29,26 +29,23 @@ export default {
 
     article {
         width: 70%;
+        max-width: 705px;
         margin-bottom: 1%;
         padding: 2%;
-        
+        background-color: #1F1E24;
+        webkit-box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
+        box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
+
         h3 {
             margin-top: 0px;
-            color: #03cfb0;
-            @include text-border-shadow(black);
+
+            i.business {
+                color: #03cfb0;
+                font-weight: bold;
+            }
         }
 
-        i.business {
-            color: white;
-            font-weight: bold;
-        }
-
-        div.date {
-            color: white;
-        }
-
-        div.text {
-            color: white;
-        }
+        
     }
 </style>

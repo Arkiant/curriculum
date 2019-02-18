@@ -28,10 +28,10 @@ html {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-align: center;
-      color: #2c3e50;
+      color: white;
       height: 100%;
       display: flex;
-      background-color: #1A1A21;
+      background-color: #100E17;
 
       content {
         position: fixed;
