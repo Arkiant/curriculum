@@ -33,7 +33,7 @@ export default {
         margin-bottom: 1%;
         padding: 2%;
         background-color: #1F1E24;
-        webkit-box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
         box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
 
