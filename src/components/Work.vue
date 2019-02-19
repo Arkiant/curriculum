@@ -1,6 +1,6 @@
 <template>
     <article>
-        <h3>{{ work.category }} (<i class="business">{{ work.business }}</i>)</h3>
+        <h3>{{ work.category }} ( <i class="business">{{ work.business }}</i> )</h3>
         
         <div class="date">
             <span>{{ initialDateFormatted }}</span> - <span>{{ finalDateFormatted }}</span> <i> ( {{ timeLapseFormatted }} )</i>
@@ -36,6 +36,9 @@ export default {
         -webkit-box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
         box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
+        text-align: left;
+        border: 3px solid black;
+        border-radius: 10px;
 
         h3 {
             margin-top: 0px;

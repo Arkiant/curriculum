@@ -49,6 +49,13 @@ export default {
                 list-style: none;
                 text-align: left;
                 margin-bottom: 2%;
+                border: 1px solid black;
+                padding: 1%;
+                border-radius: 10px;
+                background-color: #1F1E24;
+                -webkit-box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
+                box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
                 span {
                     width: 15%;
                     display: inline-block;
@@ -67,6 +74,8 @@ export default {
                     width: 100%;
                     -webkit-appearance: none;
                     appearance: none;
+                    border: 2px solid black;
+                    border-radius: 25px;
                     &::-webkit-progress-bar {
                         background-color: #CECECE;
                         border-radius: 25px;
