@@ -81,7 +81,9 @@ export default {
       'getWorks'
     ]),
     scrollFix: function(hashbang) { /* Fix scroll functionality */
-        location.href = hashbang;
+        if( hashbang != "") {
+          location.href = hashbang;
+        }
     }
   }
 }
