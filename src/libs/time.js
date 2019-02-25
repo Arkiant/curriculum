@@ -6,8 +6,8 @@ const moment = require('moment');
  *  @returns {int}
  */
 function sortByDate(a, b) {
-    let a_final_date = moment(a.final_date, ["DD-MM-YYY"]);
-    let b_final_date = moment(b.final_date, ["DD-MM-YYY"]);
+    let a_final_date = a.final_date == "" ? moment() : moment(a.final_date, ["DD-MM-YYY"]); 
+    let b_final_date = b.final_date == "" ? moment() : moment(b.final_date, ["DD-MM-YYY"]);
   
     if(a_final_date.isAfter(b_final_date)) {
       return -1;
@@ -27,7 +27,7 @@ function sortByDate(a, b) {
  * @returns {string} Mayo-1985
  */
 function formatDateTime(date, lang) {
-    return moment(date, ["DD-MM-YYYY"], lang).format("MMMM YYYY");
+  return date == "" ? "Actualidad" : moment(date, ["DD-MM-YYYY"], lang).format("MMMM YYYY");
 }
 
 /**
@@ -39,7 +39,7 @@ function formatDateTime(date, lang) {
  */
 function timeLapse(datefrom, dateto, lang) {
     let dateFrom = moment(datefrom, ["DD-MM-YYYY"], lang);
-    let dateTo = moment(dateto, ["DD-MM-YYYY"], lang);
+    let dateTo = dateto == "" ? moment().locale(lang) : moment(dateto, ["DD-MM-YYYY"], lang);
     
     return dateTo.from(dateFrom, true)
 }

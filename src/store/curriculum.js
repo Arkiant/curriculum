@@ -18,9 +18,9 @@ const mutations = {
         })
     },
     'INIT_PROFILE' (state) {
-        axios.get('/profile.json?orderBy="$key"&startAt="-LYhYMWy8wov4IijJGtm"&endAt="-LYhYMWy8wov4IijJGtm"')
+        axios.get('/profile.json?orderBy="$key"&startAt="-LZaUFYjlEgKkK1ywJHD"&endAt="-LZaUFYjlEgKkK1ywJHD"')
         .then( response => {
-            state.profile = response.data["-LYhYMWy8wov4IijJGtm"];
+            state.profile = response.data["-LZaUFYjlEgKkK1ywJHD"];
         })
         .catch( error => {
             console.log(error);
