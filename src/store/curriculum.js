@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from "@/libs/axios-curriculum.js";
 import { sortByDate } from "@/libs/time.js";
 import { convertObjectToArray } from "@/libs/conversor.js";
 
@@ -9,16 +9,20 @@ const state = {
 
 const mutations = {
     'INIT_WORKS' (state) {
-        axios.get('https://curriculum-6563e.firebaseio.com/experience.json').then( response => {
+        axios.get('/experience.json')
+        .then( response => {
             state.works = convertObjectToArray(response.data).sort(sortByDate);
-        }).catch( error => {
+        })
+        .catch( error => {
             console.log(error);
         })
     },
     'INIT_PROFILE' (state) {
-        axios.get('https://curriculum-6563e.firebaseio.com/profile.json?orderBy="$key"&startAt="-LYhYMWy8wov4IijJGtm"&endAt="-LYhYMWy8wov4IijJGtm"').then( response => {
+        axios.get('/profile.json?orderBy="$key"&startAt="-LYhYMWy8wov4IijJGtm"&endAt="-LYhYMWy8wov4IijJGtm"')
+        .then( response => {
             state.profile = response.data["-LYhYMWy8wov4IijJGtm"];
-        }).catch( error => {
+        })
+        .catch( error => {
             console.log(error);
         })
     }
