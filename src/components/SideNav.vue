@@ -53,7 +53,6 @@ export default {
 
     $color: #03CFB0;
     $color-light: white;
-    $color-dark: #1A1A21;
 
     aside {
         width: 20%;
@@ -63,7 +62,11 @@ export default {
         align-items: center;
         height: 100vh;
         max-height: 100%;
-        background-color: #13131d;
+        background-color: #1f1e24;
+        -webkit-box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
+        box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
+        border-right: 3px solid black;
 
         div.foto {
             margin-top: 5%;
@@ -84,7 +87,6 @@ export default {
             color: $color-light;
             font-size: 1.5em;
             margin: 0;
-            @include text-border-shadow(black);
 
             &.name {
                 font-size: 2em;
@@ -111,11 +113,18 @@ export default {
                 display: block;
                 margin-top: 10%;
                 text-decoration: none;
-                color: white;
+                color: black;
+                font-weight: bold;
                 border: 1px solid white;
                 border-radius: 25px;
                 padding: 10%;
                 width: 100%;
+                background-color: #cdcdcd;
+
+                -webkit-box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
+                box-shadow: -7px 0px 25px 0px rgba(0,0,0,0.75);
+                border: 3px solid black;
 
                 &.router-link-active {
                     background-color: #03cfb0;
