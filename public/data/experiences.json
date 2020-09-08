@@ -1,0 +1,37 @@
+[
+  {
+    "initial_date": "25/08/2019",
+    "final_date": "",
+    "business": "TravelgateX",
+    "category": "Senior Golang developer & Devops",
+    "functions": "Cooperar con nuevas features, refactor de código dentro de la API de HotelX.\n Crear un entorno de Test automatizado.\n Mejorar los contenedores en docker reduciendo su tamaño de 1GB a 64MB y de esa manera mejorar los despliegues de los servicios de HotelX"
+  },
+  {
+    "initial_date": "25/02/2019",
+    "final_date": "25/08/2019",
+    "business": "W2M WORLD2MEET",
+    "category": "IT Analyst",
+    "functions": "Analizar requisitos de desarrollos para la plataforma Juniper, conexiones, integraciones.\n Validar los requisitos de los desarrollos y comprobar que estén correctos ( Testeo )"
+  },
+  {
+    "initial_date": "01/04/2017",
+    "final_date": "25/02/2019",
+    "business": "IKEA Baleares & Canarias",
+    "category": "Programador Web",
+    "functions": "Creación de vagrants para el equipo, reparación de bugs y creación de diferentes mejoras para la web de ikea baleares, colaboración en el desarrollo de ikea de lituania, estonia y letonia. Ayudando a integrar sistemas automatizados y sincronización con Navision"
+  },
+  {
+    "initial_date": "01/01/2013",
+    "final_date": "01/09/2015",
+    "business": "Gesflocar Europea de Consultoría S.L",
+    "category": "Jefe de proyecto",
+    "functions": "Organizar un pequeño equipo de 3 personas utilizando metodologías ágiles de programación, analizar con el cliente los requisitos de cada sprint y crear las diferentes tareas."
+  },
+  {
+    "initial_date": "01/04/2011",
+    "final_date": "01/01/2013",
+    "business": "Gesflocar Europea de Consultoría S.L",
+    "category": "Programador web",
+    "functions": "Analista y programador web php, desarrollo de aplicaciones android, frontend web, y diseño de base de datos."
+  }
+]
